@@ -1,11 +1,13 @@
 //Dependencies for API route
 const router = require('express').Router();
 const fs = require('fs');
+const path = require('path');
 //creates unique id's based on the current time, process and machine name.
+const db = path.join(__dirname, '../db/db.json');
 const uniqid = require('uniqid');
 
 router.get('/api/notes', (req, res) => {
-    fs.readFile('../db/db.json', (err, data) => {
+    fs.readFile(db, (err, data) => {
         if(err){
             return res.status(500).json({err});
         }
@@ -20,7 +22,7 @@ router.post('/api/notes', (req, res) => {
         title: req.body.title,
         text: req.body.text,
     }
-    fs.readFile('../db/db.json', (err, data) => {
+    fs.readFile(db, (err, data) => {
         if(err){
             return res.status(500).json({err});
         }
@@ -30,13 +32,13 @@ router.post('/api/notes', (req, res) => {
         // push parsed data into nextNote
         nextData.push(nextNote);
         
-        fs.writeFile('../db/db.json', JSON.stringify(nextData), (err) =>{
+        fs.writeFile(db, JSON.stringify(nextData), (err) => {
             if(err){
                 return res.status(500).json({err});
             }
             
         });
-        res.send(nextNote);
+        res.json(nextNote);
     });
     
 });

@@ -27,7 +27,7 @@ router.post('/api/notes', (req, res) => {
         else{
         // create new variable for parsed data.
         let nextData = JSON.parse(data);
-        // push 
+        // push parsed data into nextNote
         nextData.push(nextNote);
         }
         fs.writeFile('../db/db.json', JSON.stringify(nextData), (err) =>{

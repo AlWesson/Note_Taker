@@ -1,14 +1,15 @@
 //Dependencies
 const express = require('express');
+const routeAPI = require('./routes/routeAPI');
+const routeHTML = require('./routes/routeHTML');
 
-const app = express();
 
 //create an enviromental variable port
 const PORT = process.env.PORT || 3001;
+const app = express();
 
 //variables for api and index routes
-const routeAPI = require('./Develop/routes/routeAPI');
-const routeHTML = require('./Develop/routes/routeHTML');
+
 
 
 app.use(express.static('public'));

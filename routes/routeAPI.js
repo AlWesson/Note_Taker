@@ -24,19 +24,21 @@ router.post('/api/notes', (req, res) => {
         if(err){
             return res.status(500).json({err});
         }
-        else{
+        
         // create new variable for parsed data.
         let nextData = JSON.parse(data);
         // push parsed data into nextNote
         nextData.push(nextNote);
-        }
+        
         fs.writeFile('../db/db.json', JSON.stringify(nextData), (err) =>{
             if(err){
                 return res.status(500).json({err});
             }
             
         });
+        res.send(nextNote);
     });
+    
 });
 
 /*router.delete('/api/notes/:id', (req, res) => {

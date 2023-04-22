@@ -4,7 +4,7 @@
 
   ## Description
 
-
+  Example Video: https://drive.google.com/file/d/1sZqEthw6AwR7zKF15281pqdzSWyAhkFy/view
 
   Note_Taker is a simple and fast application that allowes the user to write notes, save notes for later viewing, and delete notes that are no longer needed.
 

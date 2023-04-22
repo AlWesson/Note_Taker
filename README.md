@@ -4,16 +4,15 @@
 
   ## Description
 
-  
+
 
   Note_Taker is a simple and fast application that allowes the user to write notes, save notes for later viewing, and delete notes that are no longer needed.
 
-   ![alt text](https://raw.githubusercontent.com/AlWesson/Logo_maker_SVG/master/Images/nt_1.png)
+   ![alt text](https://raw.githubusercontent.com/AlWesson/Note_Taker/master/Images/nt_1.png)
 
-   ![alt text](https://raw.githubusercontent.com/AlWesson/Logo_maker_SVG/master/Images/nt_2.png)
+   ![alt text](https://raw.githubusercontent.com/AlWesson/Note_Taker/master/Images/nt_2.png)
 
   ## Table of Contents
-  - []
   - [Usage](#Usage)
   - [Deployed_Application](#Deployed_Application)
   - [Installation](#Installation)

@@ -40,6 +40,7 @@
   - Node.js
   - Express.js
   - Visual Studios Code
+  - uniqid
 
   ## License
 

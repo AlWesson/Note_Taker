@@ -6,6 +6,8 @@ const path = require('path');
 const db = path.join(__dirname, '../db/db.json');
 const uniqid = require('uniqid');
 
+
+// get request
 router.get('/api/notes', (req, res) => {
     fs.readFile(db, (err, data) => {
         if(err){
@@ -43,7 +45,20 @@ router.post('/api/notes', (req, res) => {
     
 });
 
-/*router.delete('/api/notes/:id', (req, res) => {
+// delete request
+router.delete('/api/notes/:id', (req, res) => {
+   // create a variable that 
+    let nextData = fs.readFileSync(db, "utf8");
+    const dataJson = JSON.parse(nextData);
 
-});*/
+    const nextNote = dataJson.filter((data) => {
+        return data.id !== req.params.id;
+    });
+    fs.writeFile(db, JSON.stringify(nextNote), (err) => {
+        if(err){
+            return res.status(500).json({err});
+        }
+        res.json();
+    });
+});
 module.exports = router;
